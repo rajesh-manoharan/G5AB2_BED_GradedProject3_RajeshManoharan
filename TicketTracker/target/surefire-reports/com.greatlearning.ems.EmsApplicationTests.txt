@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.greatlearning.ems.EmsApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.468 s <<< FAILURE! - in com.greatlearning.ems.EmsApplicationTests
+com.greatlearning.ems.EmsApplicationTests  Time elapsed: 0.467 s  <<< ERROR!
+java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
+
