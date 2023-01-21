@@ -8,24 +8,24 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="ticket_master")
+@Table(name = "ticket_master")
 
 public class Ticket {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	@Column(name = "ticket_title")
 	private String title;
-	
-	@Column(name="ticket_description")
+
+	@Column(name = "ticket_description")
 	private String description;
-	
-	@Column(name="ticket_content")
+
+	@Column(name = "ticket_content")
 	private String content;
 
-	@Column(name="ticket_creation")
+	@Column(name = "ticket_creation")
 	private String createdate;
 
 	public String getTitle() {
@@ -78,5 +78,4 @@ public class Ticket {
 		this.createdate = createdate;
 	}
 
-	
 }
