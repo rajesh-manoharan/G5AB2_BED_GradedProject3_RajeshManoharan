@@ -36,12 +36,15 @@ public class TicketController {
 
 	@GetMapping("/tickets/search/{searchString}")
 	public String searchTickets(@PathVariable String searchString, Model model) {
-		System.out.println(searchString);
 		List<Ticket> tickets = ticketService.searchTicket(searchString);
-
 		model.addAttribute("tickets", tickets);
 		model.addAttribute("searchString", searchString);
 		return "Tickets";
+	}
+
+	@GetMapping("/tickets/search/")
+	public String searchdefTickets() {
+		return "redirect:/tickets";
 	}
 
 	@GetMapping("/tickets/newTicket")

@@ -52,18 +52,8 @@ public class TicketServiceImpl implements TicketService {
 
 	@Override
 	public List<Ticket> searchTicket(String keyword) {
-		Ticket ticket = new Ticket();
-		ticket.setTitle(keyword);
-		ticket.setDescription(keyword);
-		ExampleMatcher examplematcher = ExampleMatcher.matchingAny()
-				.withIgnoreCase("ticket_title", "ticket_description").withIgnorePaths("id", "content", "createdate")
-				.withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING);
-		Example<Ticket> ticketExample = Example.of(ticket, examplematcher);
-		Iterable<Ticket> tickets = ticketRepository.findAll(ticketExample);
-		for (Ticket t : tickets) {
-			System.out.println(t);
-		}
-		return ticketRepository.findAll(ticketExample);
+		List<Ticket> searchResult = ticketRepository.findByTitleContainsOrDescriptionContainsIgnoreCase(keyword, keyword);
+		return searchResult;
 	}
 
 }
